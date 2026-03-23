@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.19)
 project(pingapka LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network Charts)
+
+find_package(Qt6 REQUIRED COMPONENTS Widgets Network Charts Test)
 
 qt_standard_project_setup()
 
@@ -11,8 +12,8 @@ qt_add_executable(pingapka
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    .gitignore
 )
+
 target_link_libraries(pingapka
     PRIVATE
         Qt6::Core
@@ -21,18 +22,19 @@ target_link_libraries(pingapka
         Qt6::Charts
 )
 
-install(TARGETS pingapka
-    BUNDLE  DESTINATION .
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+enable_testing()
+
+
+qt_add_executable(test_pingapka
+    test_pingapka.cpp
 )
 
-qt_generate_deploy_app_script(
-    TARGET pingapka
-    OUTPUT_SCRIPT deploy_script
-    NO_UNSUPPORTED_PLATFORM_ERROR
-)
-install(SCRIPT ${deploy_script})
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Charts Network)
-target_link_libraries(pingapka PRIVATE Qt6::Charts)
+target_link_libraries(test_pingapka
+    PRIVATE
+        Qt6::Test
+        Qt6::Core
+)
+
+
+add_test(NAME PingapkaTest COMMAND test_pingapka)
