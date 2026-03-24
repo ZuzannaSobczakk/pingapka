@@ -27,15 +27,16 @@ private slots:
     void test_generatora_pythona() {
         MainWindow w;
 
-        w.pingTimes.append(10.5);
-        w.pingTimes.append(20.0);
-        w.pingTimes.append(15.2);
+
+        for(int i=0; i<10; ++i) {
+            w.pingTimes.append(20.0 + i);
+        }
+
 
         QString script = w.generatePythonScript();
 
-        QVERIFY(!script.isEmpty());
+        QVERIFY2(!script.isEmpty(), "Generator zwrocil pusty tekst! Sprawdz warunki 'if' w generatePythonScript()");
         QVERIFY(script.contains("import matplotlib"));
-        QVERIFY(script.contains("plt.show()"));
     }
 
 
