@@ -7,6 +7,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -19,18 +22,29 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 \
-            libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-shape0 \
-            libfontconfig1 libdbus-1-3 xvfb
+            libxcb-cursor0 \
+            libxkbcommon-x11-0 \
+            libxcb-icccm4 \
+            libxcb-image0 \
+            libxcb-keysyms1 \
+            libxcb-render-util0 \
+            libxcb-xinerama0 \
+            libxcb-shape0 \
+            libxcb-xkb1 \
+            libx11-xcb1 \
+            libfontconfig1 \
+            libdbus-1-3 \
+            libegl1 \
+            libgl1 \
+            xvfb
 
       - name: Instalacja Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: '6.6.0'
+          version: '6.8.0' # Najnowsza stabilna wersja na rok 2026
           arch: 'gcc_64'
-          modules: 'qtcharts'
-          # Wylaczamy cache tymczasowo, bo GitHub ma awarie:
-          cache: false 
+          modules: 'qtcharts qtnetwork'
+          cache: false
 
       - name: Konfiguracja i Budowanie
         run: |
@@ -39,7 +53,10 @@ jobs:
           cmake .. -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
-      - name: Uruchomienie testów (przez XVFB)
+      - name: Uruchomienie testów
+        env:
+          QT_QPA_PLATFORM: xcb
+          QT_DEBUG_PLUGINS: 1 # Pokaże nam błędy, jeśli xcb nadal będzie marudzić
         run: |
           cd build
-          xvfb-run --auto-servernum ctest --output-on-failure
+          xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" ./test_pingapka
