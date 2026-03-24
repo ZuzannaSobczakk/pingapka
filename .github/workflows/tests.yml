@@ -1,26 +1,39 @@
 name: Testy Jednostkowe Qt
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Instalacja bibliotek Qt
+    steps:
+      - name: Pobierz kod
+        uses: actions/checkout@v4
+
+      - name: Instalacja zaleznosci systemowych
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0
+
+      - name: Instalacja Qt
         uses: jurplel/install-qt-action@v3
         with:
           version: '6.5.0'
-          modules: 'qtcharts'
+          modules: 'qtcharts qtnetwork'
 
-      - name: Konfiguracja i budowanie
+      - name: Konfiguracja i Budowanie
         run: |
-          cmake -B build
-          cmake --build build
+          mkdir build
+          cd build
+          cmake ..
+          make
 
       - name: Uruchomienie testów
-      env:
+        env:
           QT_QPA_PLATFORM: offscreen
         run: |
           cd build
