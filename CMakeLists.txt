@@ -27,6 +27,9 @@ enable_testing()
 
 qt_add_executable(test_pingapka
     test_pingapka.cpp
+    mainwindow.cpp
+    mainwindow.h
+    mainwindow.ui
 )
 
 
@@ -34,6 +37,9 @@ target_link_libraries(test_pingapka
     PRIVATE
         Qt6::Test
         Qt6::Core
+        Qt6::Widgets
+        Qt6::Network
+        Qt6::Charts
 )
 
 

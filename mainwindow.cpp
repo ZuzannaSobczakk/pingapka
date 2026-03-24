@@ -34,13 +34,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-/**
- * funkcja uruchamiana po przyciski gotowe:
- *pobiera tekst z pola IP  i sprawdza czy pole nie jest puste, jeżeli pole jest puste
- *wyswietlany jest komunikat z prosba o wpisanie IP
- *Jak adres jest poprawny wywolywana jest funkcja runPing() -wykoujaca ping i funkcja
- *saveResults() zapisujaca wyniki do pliku CSV
- **/
+
 void MainWindow::on_btnGotowe_clicked()
 {
     QString ip = ui->IP->text();
@@ -52,14 +46,7 @@ void MainWindow::on_btnGotowe_clicked()
     saveResults();
 }
 
-/**funkcja odsyla do fukcji czyszczącej liste poprzednich pingów, nastepnie tworzy obiekt Qprocess
- *ktory pozwala uruchomic polecenie systemowe.
- *Uruchamia polecenie systemowe wykonujace 10 pingów na Windows lub Linux.
- *wyniki są pobierane do pliku z którego potem wyszukiwane są czasy odpowiedzi
- *Te czasy odpowiedzi są zapisywane do listy pingTimes
- *funkcja wyswietla komunikat czy dane zostaly pobrane poprawnie
- *cel funkcji: automatyczne wykonanie pingów i zapisanie czasów odpowiedzi do listy.
-**/
+
 void MainWindow::runPing(QString ip)
 {
     pingTimes.clear();
@@ -86,12 +73,7 @@ void MainWindow::runPing(QString ip)
     }
 }
 
-/**funkcja tworzy sciezke do pliku ping_results.csv
- *otwierany jest plik w trybie zapisu, do niego dopisywany jest naglowek kolumny ping
- *nastepnie zapisywane sa wszystkie wartosci pingow w liscie pingTimes(kazdy w nowej lini)
- *w konsoli pierwotnie byla wyswietlana informacja o zapisaniu pliku(w celu popraw programu)
- * cel funkcji: zapisanie wyników pomiarów do pliku CSV, który będzie używany przez skrypt Python
-**/
+
 void MainWindow::saveResults()
 {
 
@@ -110,16 +92,7 @@ void MainWindow::saveResults()
     }
 }
 
-/** funkcja tworzy adres URL do serwera AI (Ollama)
- *tworzone jest zapytanie HTTP
- *ustawiany jest naglowek informujacy o formacie danych
- *pobierana jest sciezka do pliku z wynikami ping
- *tworzony jest obiekt JSON zawierajacy nazwe modelu AI, polecenie wygenerowania kodu w Python
- *informacje o braku odpowiedzi
- *Zapytanie wysylane jest do AI, program czeka na odpowiedz serwera
- * generowany jest kod Python, ktory zostaje zwrocony jako wynik funkcji
- *cel funkcji: automatyczne wygenerowanie skryptu Python, który utworzy wykres z danych ping.
-**/
+
 QString MainWindow::generatePythonScript()
 {
     QUrl url("http://127.0.0.1:11434/api/generate");
@@ -153,12 +126,7 @@ QString MainWindow::generatePythonScript()
    return responseJson.object().value("response").toString().trimmed();
 }
 
-/** funkcja sprawdza czy kod wygenerowan przez AI zawiera znaczniki, jesli tak to usuwa je
- *sprawdza czy kod nie jest pusty
- *tworzy plik plot.py w katalogu programu
- *do tego pliku zapisuje kod Python
- *cel funkcji: ruchomienie wygenerowanego skryptu Python, który tworzy wykres
-**/
+
 void MainWindow::runPythonScript(QString script)
 {
 
@@ -182,12 +150,6 @@ void MainWindow::runPythonScript(QString script)
     QProcess::startDetached("python", QStringList() << path);
 }
 
-/** wyswietla komunikat informujacy ze trwa generowanie wykresu
- *aktualizuje interfejs uzytkownika
- *wywoluje funkcje generujaca kod python
- *jesli kod istnieje wywolywana jest funkcja runPythonScript()
- *jesli kod nie zostal wygenerowany informuje o bledzie
-**/
 void MainWindow::on_btnWykres_clicked()
 {
     ui->pingResult->setText("AI generuje wykres... Czekaj...");

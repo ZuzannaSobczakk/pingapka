@@ -1,17 +1,42 @@
 #include <QtTest>
 #include <QCoreApplication>
+#include "mainwindow.h"
 
 class PingapkaTest : public QObject {
     Q_OBJECT
+
 private slots:
-    void test_matematyki() {
-        int wynik = 2 + 2;
-        QCOMPARE(wynik, 4);
+
+    void test_inicjalizacji_okna() {
+        MainWindow w;
+        QVERIFY(!w.windowTitle().isEmpty());
     }
 
-    void test_napisu() {
-        QString str = "Pingapka";
-        QVERIFY(str.startsWith("Ping"));
+
+    void test_dodawania_danych() {
+        MainWindow w;
+
+        w.pingTimes.append(15.5);
+        w.pingTimes.append(20.0);
+
+        QCOMPARE(w.pingTimes.size(), 2);
+        QCOMPARE(w.pingTimes.first(), 15.5);
+    }
+
+
+    void test_generatora_pythona() {
+        MainWindow w;
+        QString script = w.generatePythonScript();
+        QVERIFY(!script.isEmpty());
+        QVERIFY(script.contains("plt.show()"));
+    }
+
+
+    void test_walidacji_pustego_ip() {
+        MainWindow w;
+
+        QString testowyAdres = "";
+        QVERIFY(testowyAdres.isEmpty());
     }
 };
 
