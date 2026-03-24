@@ -14,24 +14,30 @@ jobs:
       - name: Pobierz kod
         uses: actions/checkout@v4
 
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
       - name: Instalacja zaleznosci systemowych
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-shape0
+          sudo apt-get install -y libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-shape0 libxcb-xfixes0 libxcb-randr0
 
       - name: Instalacja Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: '6.6.0'
-          host: 'linux'
-          target: 'desktop'
+          version: '6.5.3'
           arch: 'gcc_64'
-          modules: 'qtcharts qtnetwork'
+          modules: 'qtcharts' 
+          cache: true 
+
       - name: Konfiguracja i Budowanie
         run: |
           mkdir build
           cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake ..
           cmake --build .
 
       - name: Uruchomienie testów
