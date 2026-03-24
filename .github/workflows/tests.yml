@@ -1,3 +1,4 @@
+
 name: Testy Jednostkowe Qt
 
 on:
@@ -14,35 +15,31 @@ jobs:
       - name: Pobierz kod
         uses: actions/checkout@v4
 
-      
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
       - name: Instalacja zaleznosci systemowych
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-shape0 libxcb-xfixes0 libxcb-randr0
+          sudo apt-get install -y \
+            libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 \
+            libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-shape0 \
+            libfontconfig1 libdbus-1-3 xvfb
 
       - name: Instalacja Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: '6.5.3'
+          version: '6.6.0'
           arch: 'gcc_64'
-          modules: 'qtcharts' 
-          cache: true 
+          modules: 'qtcharts'
+          # Wylaczamy cache tymczasowo, bo GitHub ma awarie:
+          cache: false 
 
       - name: Konfiguracja i Budowanie
         run: |
           mkdir build
           cd build
-          cmake ..
+          cmake .. -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
-      - name: Uruchomienie testów
-        env:
-          QT_QPA_PLATFORM: offscreen
+      - name: Uruchomienie testów (przez XVFB)
         run: |
           cd build
-          ctest --output-on-failure
+          xvfb-run --auto-servernum ctest --output-on-failure
