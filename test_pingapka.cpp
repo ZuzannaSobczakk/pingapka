@@ -1,6 +1,7 @@
 #include <QtTest>
 #include <QCoreApplication>
 #include "mainwindow.h"
+#include <QLineEdit>
 
 class PingapkaTest : public QObject {
     Q_OBJECT
@@ -23,19 +24,22 @@ private slots:
         QCOMPARE(w.pingTimes.first(), 15.5);
     }
 
-
     void test_generatora_pythona() {
         MainWindow w;
 
+
+        QLineEdit* lineEdit = w.findChild<QLineEdit*>("hostLineEdit");
+        if (lineEdit) {
+            lineEdit->setText("8.8.8.8");
+        }
 
         for(int i=0; i<10; ++i) {
             w.pingTimes.append(20.0 + i);
         }
 
-
         QString script = w.generatePythonScript();
 
-        QVERIFY2(!script.isEmpty(), "Generator zwrocil pusty tekst! Sprawdz warunki 'if' w generatePythonScript()");
+        QVERIFY2(!script.isEmpty(), "Generator nadal zwraca pusty tekst!");
         QVERIFY(script.contains("import matplotlib"));
     }
 
