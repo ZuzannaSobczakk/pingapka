@@ -1,5 +1,5 @@
 var annotated_dup =
 [
-    [ "MainWindow", "classMainWindow.html", null ],
+    [ "MainWindow", "classMainWindow.html", "classMainWindow" ],
     [ "PingapkaTest", "classPingapkaTest.html", null ]
 ];

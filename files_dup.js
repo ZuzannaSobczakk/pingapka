@@ -1,4 +1,4 @@
 var files_dup =
 [
-    [ "mainwindow.h", "mainwindow_8h_source.html", null ]
+    [ "mainwindow.h", "mainwindow_8h.html", "mainwindow_8h" ]
 ];
