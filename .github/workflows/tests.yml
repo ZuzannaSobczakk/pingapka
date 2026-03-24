@@ -6,40 +6,44 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-and-test:
-
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Pobierz kod
         uses: actions/checkout@v4
 
-      - name: Instalacja Qt6 i zaleznosci (Systemowo)
+      - name: Instalacja bibliotek (Systemowa)
         run: |
           sudo apt-get update
           sudo apt-get install -y \
+            cmake g++ make xvfb \
             qt6-base-dev \
             qt6-charts-dev \
-            cmake \
-            make \
-            g++ \
-            xvfb \
-            libgl1-mesa-dev
+            libqt6charts6 \
+            libgl1-mesa-dev \
+            libxkbcommon-x11-0 \
+            libxcb-cursor0
 
-      - name: Konfiguracja projektu
+      - name: Konfiguracja (Wskazanie Qt6)
         run: |
           mkdir build
           cd build
-          cmake ..
 
-      - name: Budowanie projektu
+          cmake .. -DQt6_DIR=/usr/lib/x86_64-linux-gnu/cmake/Qt6 -DCMAKE_BUILD_TYPE=Release
+
+      - name: Budowanie
         run: |
           cd build
           make
 
-      - name: Uruchomienie testów (XVFB)
+      - name: Uruchomienie testów
         run: |
           cd build
-      
+         
           xvfb-run --auto-servernum ./test_pingapka
