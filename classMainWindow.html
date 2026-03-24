@@ -74,6 +74,7 @@ $(function() {
 <a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classMainWindow-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MainWindow Class Reference</div></div>
 </div><!--header-->
@@ -134,6 +135,11 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a0fb27e971bfe26f27b5a1133f0fffbd8" id="r_a0fb27e971bfe26f27b5a1133f0fffbd8"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a0fb27e971bfe26f27b5a1133f0fffbd8">networkManager</a></td></tr>
 <tr class="memdesc:a0fb27e971bfe26f27b5a1133f0fffbd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zarządca operacji sieciowych.  <br /></td></tr>
 <tr class="separator:a0fb27e971bfe26f27b5a1133f0fffbd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac4e8491f8c78abc42cf21b250f3c1254" id="r_ac4e8491f8c78abc42cf21b250f3c1254"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ac4e8491f8c78abc42cf21b250f3c1254">PingapkaTest</a></td></tr>
+<tr class="separator:ac4e8491f8c78abc42cf21b250f3c1254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Klasa zarządzająca interfejsem użytkownika oraz logiką testowania połączenia (ping). </p>
@@ -208,8 +214,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tworzy kod skryptu w języku Python służący do zaawansowanej analizy danych. </p>
-<dl class="section return"><dt>Returns</dt><dd>QString zawierający pełny kod skryptu Python.</dd></dl>
-<p>funkcja tworzy adres URL do serwera AI (Ollama) tworzone jest zapytanie HTTP ustawiany jest naglowek informujacy o formacie danych pobierana jest sciezka do pliku z wynikami ping tworzony jest obiekt JSON zawierajacy nazwe modelu AI, polecenie wygenerowania kodu w Python informacje o braku odpowiedzi Zapytanie wysylane jest do AI, program czeka na odpowiedz serwera generowany jest kod Python, ktory zostaje zwrocony jako wynik funkcji cel funkcji: automatyczne wygenerowanie skryptu Python, który utworzy wykres z danych ping. </p>
+<dl class="section return"><dt>Returns</dt><dd>QString zawierający pełny kod skryptu Python. </dd></dl>
 
 </div>
 </div>
@@ -237,7 +242,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Slot wywoływany po kliknięciu przycisku "Gotowe". Rozpoczyna proces sprawdzania wpisanego adresu. </p>
-<p>funkcja uruchamiana po przyciski gotowe: pobiera tekst z pola IP i sprawdza czy pole nie jest puste, jeżeli pole jest puste wyswietlany jest komunikat z prosba o wpisanie IP Jak adres jest poprawny wywolywana jest funkcja <a class="el" href="classMainWindow.html#a62e6cd40e42b61714679647ff068b561" title="Przeprowadza test opóźnienia (ping) dla podanego adresu IP.">runPing()</a> -wykoujaca ping i funkcja <a class="el" href="classMainWindow.html#a4cb868f898400955a1035571326591cf" title="Zapisuje zebrane wyniki testów do pliku tekstowego lub bazy danych.">saveResults()</a> zapisujaca wyniki do pliku CSV </p>
 
 </div>
 </div>
@@ -265,7 +269,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Slot wywoływany po kliknięciu przycisku "Wykres". Generuje i wyświetla wizualizację zebranych danych. </p>
-<p>wyswietla komunikat informujacy ze trwa generowanie wykresu aktualizuje interfejs uzytkownika wywoluje funkcje generujaca kod python jesli kod istnieje wywolywana jest funkcja <a class="el" href="classMainWindow.html#a61fa0a379fa2e33b3dc8f2f5bd219c77" title="Uruchamia zewnętrzny skrypt Python.">runPythonScript()</a> jesli kod nie zostal wygenerowany informuje o bledzie </p>
 
 </div>
 </div>
@@ -296,11 +299,10 @@ Private Attributes</h2></td></tr>
 <p>Przeprowadza test opóźnienia (ping) dla podanego adresu IP. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ip</td><td>Ciąg znaków zawierający adres docelowy.</td></tr>
+    <tr><td class="paramname">ip</td><td>Ciąg znaków zawierający adres docelowy. </td></tr>
   </table>
   </dd>
 </dl>
-<p>funkcja odsyla do fukcji czyszczącej liste poprzednich pingów, nastepnie tworzy obiekt Qprocess ktory pozwala uruchomic polecenie systemowe. Uruchamia polecenie systemowe wykonujace 10 pingów na Windows lub Linux. wyniki są pobierane do pliku z którego potem wyszukiwane są czasy odpowiedzi Te czasy odpowiedzi są zapisywane do listy pingTimes funkcja wyswietla komunikat czy dane zostaly pobrane poprawnie cel funkcji: automatyczne wykonanie pingów i zapisanie czasów odpowiedzi do listy. </p>
 
 </div>
 </div>
@@ -331,11 +333,10 @@ Private Attributes</h2></td></tr>
 <p>Uruchamia zewnętrzny skrypt Python. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">script</td><td>Treść skryptu do wykonania.</td></tr>
+    <tr><td class="paramname">script</td><td>Treść skryptu do wykonania. </td></tr>
   </table>
   </dd>
 </dl>
-<p>funkcja sprawdza czy kod wygenerowan przez AI zawiera znaczniki, jesli tak to usuwa je sprawdza czy kod nie jest pusty tworzy plik plot.py w katalogu programu do tego pliku zapisuje kod Python cel funkcji: ruchomienie wygenerowanego skryptu Python, który tworzy wykres </p>
 
 </div>
 </div>
@@ -363,7 +364,29 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Zapisuje zebrane wyniki testów do pliku tekstowego lub bazy danych. </p>
-<p>funkcja tworzy sciezke do pliku ping_results.csv otwierany jest plik w trybie zapisu, do niego dopisywany jest naglowek kolumny ping nastepnie zapisywane sa wszystkie wartosci pingow w liscie <a class="el" href="classMainWindow.html#aa8e3a6a2b750f4d109d6a0880c750289" title="Kontener przechowujący czasy odpowiedzi (ping) w milisekundach.">pingTimes(kazdy w nowej lini)</a> w konsoli pierwotnie byla wyswietlana informacja o zapisaniu pliku(w celu popraw programu) cel funkcji: zapisanie wyników pomiarów do pliku CSV, który będzie używany przez skrypt Python </p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="ac4e8491f8c78abc42cf21b250f3c1254" name="ac4e8491f8c78abc42cf21b250f3c1254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e8491f8c78abc42cf21b250f3c1254">&#9670;&#160;</a></span>PingapkaTest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classPingapkaTest.html">PingapkaTest</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
