@@ -1,27 +1,49 @@
 name: Testy Jednostkowe Qt
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Pobierz kod
+        uses: actions/checkout@v4
 
-      - name: Instalacja bibliotek Qt
-        uses: jurplel/install-qt-action@v3
-        with:
-          version: '6.5.0'
-          modules: 'qtcharts'
-
-      - name: Konfiguracja i budowanie
+      - name: Instalacja bibliotek (Systemowa)
         run: |
-          cmake -B build
-          cmake --build build
+          sudo apt-get update
+          sudo apt-get install -y \
+            cmake g++ make xvfb \
+            qt6-base-dev \
+            qt6-charts-dev \
+            libqt6charts6 \
+            libgl1-mesa-dev \
+            libxkbcommon-x11-0 \
+            libxcb-cursor0
 
-      - name: Uruchomienie testów
-      env:
-          QT_QPA_PLATFORM: offscreen
+      - name: Konfiguracja (Wskazanie Qt6)
+        run: |
+          mkdir build
+          cd build
+
+          cmake .. -DQt6_DIR=/usr/lib/x86_64-linux-gnu/cmake/Qt6 -DCMAKE_BUILD_TYPE=Release
+
+      - name: Budowanie
         run: |
           cd build
-          ctest --output-on-failure
+          make
+
+      - name: Uruchomienie testów
+        run: |
+          cd build
+         
+          xvfb-run --auto-servernum ./test_pingapka
