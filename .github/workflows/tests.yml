@@ -17,20 +17,22 @@ jobs:
       - name: Instalacja zaleznosci systemowych
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0
+          sudo apt-get install -y libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-shape0
 
       - name: Instalacja Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: '6.5.0'
+          version: '6.6.0'
+          host: 'linux'
+          target: 'desktop'
+          arch: 'gcc_64'
           modules: 'qtcharts qtnetwork'
-
       - name: Konfiguracja i Budowanie
         run: |
           mkdir build
           cd build
-          cmake ..
-          make
+          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake --build .
 
       - name: Uruchomienie testów
         env:
