@@ -1,5 +1,5 @@
 PROJECT_NAME           = "Pingapka"
-OUTPUT_DIRECTORY       = docs
+OUTPUT_DIRECTORY       = 
 GENERATE_HTML          = YES
 GENERATE_LATEX         = NO
 
