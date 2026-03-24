@@ -1,0 +1,25 @@
+name: Testy Jednostkowe Qt
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalacja bibliotek Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.5.0'
+          modules: 'qtcharts'
+
+      - name: Konfiguracja i budowanie
+        run: |
+          cmake -B build
+          cmake --build build
+
+      - name: Uruchomienie testów
+        run: |
+          cd build
+          ctest --output-on-failure
