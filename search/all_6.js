@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['saveresults_0',['saveResults',['../classMainWindow.html#a4cb868f898400955a1035571326591cf',1,'MainWindow']]]
+  ['networkmanager_0',['networkManager',['../classMainWindow.html#a0fb27e971bfe26f27b5a1133f0fffbd8',1,'MainWindow']]]
 ];

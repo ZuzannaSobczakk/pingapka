@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pingapkatest_0',['pingapkatest',['../classPingapkaTest.html',1,'PingapkaTest'],['../classMainWindow.html#ac4e8491f8c78abc42cf21b250f3c1254',1,'MainWindow::PingapkaTest']]],
-  ['pingtimes_1',['pingTimes',['../classMainWindow.html#aa8e3a6a2b750f4d109d6a0880c750289',1,'MainWindow']]]
+  ['jak_20uruchomić_0',['Jak uruchomić?',['../index.html#autotoc_md8',1,'']]],
+  ['jakość_20i_20testy_1',['Jakość i Testy',['../index.html#autotoc_md4',1,'']]]
 ];
