@@ -20,6 +20,8 @@ jobs:
           cmake --build build
 
       - name: Uruchomienie testów
+      env:
+          QT_QPA_PLATFORM: offscreen
         run: |
           cd build
           ctest --output-on-failure
