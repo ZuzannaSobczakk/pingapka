@@ -123,7 +123,17 @@ QString MainWindow::generatePythonScript()
     reply->deleteLater();
 
     QJsonDocument responseJson = QJsonDocument::fromJson(data);
-   return responseJson.object().value("response").toString().trimmed();
+    QString result = responseJson.object().value("response").toString().trimmed();
+
+    if (result.isEmpty()) {
+        result = "import pandas as pd\n"
+                 "import matplotlib.pyplot as plt\n"
+                 "df = pd.read_csv('" + csvPath + "')\n"
+                             "df['Ping'].plot(kind='line', title='Statystyki Ping')\n"
+                             "plt.show()";
+    }
+
+    return result;
 }
 
 
