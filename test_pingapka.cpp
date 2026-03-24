@@ -28,18 +28,21 @@ private slots:
         MainWindow w;
 
 
-        QLineEdit* lineEdit = w.findChild<QLineEdit*>("hostLineEdit");
-        if (lineEdit) {
-            lineEdit->setText("8.8.8.8");
+        QList<QLineEdit*> allLineEdits = w.findChildren<QLineEdit*>();
+        for(QLineEdit* edit : allLineEdits) {
+            edit->setText("8.8.8.8");
         }
 
-        for(int i=0; i<10; ++i) {
+
+        for(int i = 0; i < 10; ++i) {
             w.pingTimes.append(20.0 + i);
         }
 
+
         QString script = w.generatePythonScript();
 
-        QVERIFY2(!script.isEmpty(), "Generator nadal zwraca pusty tekst!");
+
+        QVERIFY2(!script.isEmpty(), "Generator nadal zwraca pusty tekst! Sprawdz czy w mainwindow.cpp nie masz warunku, ktory zawsze zwraca puste "" ");
         QVERIFY(script.contains("import matplotlib"));
     }
 
