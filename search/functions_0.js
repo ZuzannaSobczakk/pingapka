@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainwindow_0',['MainWindow',['../classMainWindow.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]]
+  ['generatepythonscript_0',['generatePythonScript',['../classMainWindow.html#a3a31dbc41363006e7b1df04742dc896e',1,'MainWindow']]]
 ];
