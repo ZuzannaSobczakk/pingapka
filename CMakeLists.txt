@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.19)
 project(pingapka LANGUAGES CXX)
 
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network Charts Test)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Network Charts Test Concurrent)
 
 qt_standard_project_setup()
 
@@ -20,6 +20,7 @@ target_link_libraries(pingapka
         Qt6::Widgets
         Qt6::Network
         Qt6::Charts
+        Qt6::Concurrent
 )
 
 enable_testing()
@@ -40,6 +41,7 @@ target_link_libraries(test_pingapka
         Qt6::Widgets
         Qt6::Network
         Qt6::Charts
+        Qt6::Concurrent
 )
 
 
