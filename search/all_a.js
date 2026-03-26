@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['on_5fbtngotowe_5fclicked_0',['on_btnGotowe_clicked',['../classMainWindow.html#aa26628781d6867fcf21de0373a17f3e9',1,'MainWindow']]],
-  ['on_5fbtnwykres_5fclicked_1',['on_btnWykres_clicked',['../classMainWindow.html#a9f7b5462d643022012e6a513153718b2',1,'MainWindow']]]
+  ['pingapka_20monitor_20sieci_20z_20ai_0',['pingapka - Monitor Sieci z AI',['../index.html',1,'']]],
+  ['pingapkatest_1',['pingapkatest',['../classPingapkaTest.html',1,'PingapkaTest'],['../classMainWindow.html#ac4e8491f8c78abc42cf21b250f3c1254',1,'MainWindow::PingapkaTest']]],
+  ['pingfinished_2',['pingFinished',['../classMainWindow.html#a1c261d056d9925b742ac5ec855cca2cd',1,'MainWindow']]],
+  ['pingtimes_3',['pingTimes',['../classMainWindow.html#aa8e3a6a2b750f4d109d6a0880c750289',1,'MainWindow']]]
 ];

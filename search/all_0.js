@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['0_0',['🚀 Funkcje (Wymagania na 5.0)',['../index.html#autotoc_md1',1,'']]]
+  ['0_0',['Funkcje (Wymagania na 5.0)',['../index.html#autotoc_md1',1,'']]]
 ];
