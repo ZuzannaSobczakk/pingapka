@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ai_0',['ingapka - Monitor Sieci z AI',['../index.html',1,'']]]
+  ['ai_0',['pingapka - Monitor Sieci z AI',['../index.html',1,'']]]
 ];

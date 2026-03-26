@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🏗️_20jak_20uruchomić_0',['🏗️ Jak uruchomić?',['../index.html#autotoc_md4',1,'']]]
+  ['📖_20dokumentacja_0',['📖 Dokumentacja',['../index.html#autotoc_md3',1,'']]]
 ];

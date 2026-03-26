@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📖_20dokumentacja_0',['📖 Dokumentacja',['../index.html#autotoc_md3',1,'']]]
+  ['🚀_20funkcje_20wymagania_20na_205_200_0',['🚀 Funkcje (Wymagania na 5.0)',['../index.html#autotoc_md1',1,'']]]
 ];

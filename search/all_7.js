@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ingapka_20monitor_20sieci_20z_20ai_0',['ingapka - Monitor Sieci z AI',['../index.html',1,'']]]
+  ['jak_20uruchomić_0',['🏗️ Jak uruchomić?',['../index.html#autotoc_md4',1,'']]]
 ];
