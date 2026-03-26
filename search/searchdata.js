@@ -1,13 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "dfgijmnoprstu~",
+  0: "ghmnoprstu~",
   1: "mp",
   2: "u",
-  3: "mrt",
-  4: "gmorst~",
+  3: "mt",
+  4: "ghmoprst~",
   5: "npu",
-  6: "p",
-  7: "p"
+  6: "p"
 };
 
 var indexSectionNames =
@@ -18,8 +17,7 @@ var indexSectionNames =
   3: "files",
   4: "functions",
   5: "variables",
-  6: "related",
-  7: "pages"
+  6: "related"
 };
 
 var indexSectionLabels =
@@ -30,7 +28,6 @@ var indexSectionLabels =
   3: "Files",
   4: "Functions",
   5: "Variables",
-  6: "Friends",
-  7: "Pages"
+  6: "Friends"
 };
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['saveresults_0',['saveResults',['../classMainWindow.html#a4cb868f898400955a1035571326591cf',1,'MainWindow']]]
+  ['_7emainwindow_0',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainwindow_1',['MainWindow',['../classMainWindow.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]]
+  ['handlepingresults_0',['handlePingResults',['../classMainWindow.html#a867f7e77558b80c29cd9caf4ece43a68',1,'MainWindow']]]
 ];

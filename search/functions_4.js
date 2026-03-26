@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['saveresults_0',['saveResults',['../classMainWindow.html#a4cb868f898400955a1035571326591cf',1,'MainWindow']]]
+  ['pingfinished_0',['pingFinished',['../classMainWindow.html#a1c261d056d9925b742ac5ec855cca2cd',1,'MainWindow']]]
 ];
