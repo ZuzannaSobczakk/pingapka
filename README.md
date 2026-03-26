@@ -1,4 +1,4 @@
-# ingapka - Monitor Sieci z AI
+# pingapka - Monitor Sieci z AI
 
 **Pingapka** to nowoczesna aplikacja desktopowa stworzona w środowisku Qt 6, służąca do monitorowania opóźnień sieciowych (ping) oraz inteligentnej analizy danych przy użyciu modelu językowego (LLM).
 
