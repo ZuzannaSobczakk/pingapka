@@ -81,6 +81,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Klasa odpowiedzialna za zarządzanie GUI, procesami sieciowymi (ping) oraz integrację z modelem LLM.  
+ <a href="classMainWindow.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MainWindow:</div>
@@ -92,50 +95,66 @@ Inheritance diagram for MainWindow:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a1c261d056d9925b742ac5ec855cca2cd" id="r_a1c261d056d9925b742ac5ec855cca2cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a1c261d056d9925b742ac5ec855cca2cd">pingFinished</a> ()</td></tr>
+<tr class="memdesc:a1c261d056d9925b742ac5ec855cca2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany po zakończeniu operacji pingowania w osobnym wątku roboczym.  <br /></td></tr>
 <tr class="separator:a1c261d056d9925b742ac5ec855cca2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a996c5a2b6f77944776856f08ec30858d" id="r_a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor klasy <a class="el" href="classMainWindow.html" title="Klasa odpowiedzialna za zarządzanie GUI, procesami sieciowymi (ping) oraz integrację z modelem LLM.">MainWindow</a>. Inicjalizuje UI oraz managera sieci.  <br /></td></tr>
 <tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7" id="r_ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
+<tr class="memdesc:ae98d00a93bc118200eeef9f9bba1dba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor klasy <a class="el" href="classMainWindow.html" title="Klasa odpowiedzialna za zarządzanie GUI, procesami sieciowymi (ping) oraz integrację z modelem LLM.">MainWindow</a>. Zwalnia zasoby zajmowane przez interfejs.  <br /></td></tr>
 <tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr class="memitem:aa26628781d6867fcf21de0373a17f3e9" id="r_aa26628781d6867fcf21de0373a17f3e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa26628781d6867fcf21de0373a17f3e9">on_btnGotowe_clicked</a> ()</td></tr>
+<tr class="memdesc:aa26628781d6867fcf21de0373a17f3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje kliknięcie przycisku "Gotowe". Inicjuje proces pingowania asynchronicznego.  <br /></td></tr>
 <tr class="separator:aa26628781d6867fcf21de0373a17f3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f7b5462d643022012e6a513153718b2" id="r_a9f7b5462d643022012e6a513153718b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a9f7b5462d643022012e6a513153718b2">on_btnWykres_clicked</a> ()</td></tr>
+<tr class="memdesc:a9f7b5462d643022012e6a513153718b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje kliknięcie przycisku "Wykres". Rozpoczyna proces generowania skryptu przez AI.  <br /></td></tr>
 <tr class="separator:a9f7b5462d643022012e6a513153718b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a867f7e77558b80c29cd9caf4ece43a68" id="r_a867f7e77558b80c29cd9caf4ece43a68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a867f7e77558b80c29cd9caf4ece43a68">handlePingResults</a> ()</td></tr>
+<tr class="memdesc:a867f7e77558b80c29cd9caf4ece43a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot odbierający sygnał o zakończeniu pingowania. Odświeża UI i zapisuje wyniki.  <br /></td></tr>
 <tr class="separator:a867f7e77558b80c29cd9caf4ece43a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a62e6cd40e42b61714679647ff068b561" id="r_a62e6cd40e42b61714679647ff068b561"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a62e6cd40e42b61714679647ff068b561">runPing</a> (QString ip)</td></tr>
+<tr class="memdesc:a62e6cd40e42b61714679647ff068b561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wykonuje operację pingowania. Funkcja przeznaczona do pracy w tle (wątek roboczy).  <br /></td></tr>
 <tr class="separator:a62e6cd40e42b61714679647ff068b561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cb868f898400955a1035571326591cf" id="r_a4cb868f898400955a1035571326591cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a4cb868f898400955a1035571326591cf">saveResults</a> ()</td></tr>
+<tr class="memdesc:a4cb868f898400955a1035571326591cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje zebrane dane do pliku CSV, który służy jako wejście dla skryptu Python.  <br /></td></tr>
 <tr class="separator:a4cb868f898400955a1035571326591cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a31dbc41363006e7b1df04742dc896e" id="r_a3a31dbc41363006e7b1df04742dc896e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a3a31dbc41363006e7b1df04742dc896e">generatePythonScript</a> ()</td></tr>
+<tr class="memdesc:a3a31dbc41363006e7b1df04742dc896e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Komunikuje się z lokalnym modelem LLM (np. Gemma) w celu wygenerowania kodu wizualizacji danych.  <br /></td></tr>
 <tr class="separator:a3a31dbc41363006e7b1df04742dc896e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61fa0a379fa2e33b3dc8f2f5bd219c77" id="r_a61fa0a379fa2e33b3dc8f2f5bd219c77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a61fa0a379fa2e33b3dc8f2f5bd219c77">runPythonScript</a> (QString script)</td></tr>
+<tr class="memdesc:a61fa0a379fa2e33b3dc8f2f5bd219c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje kod do pliku .py i uruchamia zewnętrzny interpreter Pythona (podejście wieloprocesowe).  <br /></td></tr>
 <tr class="separator:a61fa0a379fa2e33b3dc8f2f5bd219c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a35466a70ed47252a0191168126a352a5" id="r_a35466a70ed47252a0191168126a352a5"><td class="memItemLeft" align="right" valign="top">Ui::MainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">ui</a></td></tr>
+<tr class="memdesc:a35466a70ed47252a0191168126a352a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na komponenty interfejsu użytkownika.  <br /></td></tr>
 <tr class="separator:a35466a70ed47252a0191168126a352a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8e3a6a2b750f4d109d6a0880c750289" id="r_aa8e3a6a2b750f4d109d6a0880c750289"><td class="memItemLeft" align="right" valign="top">QVector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa8e3a6a2b750f4d109d6a0880c750289">pingTimes</a></td></tr>
+<tr class="memdesc:aa8e3a6a2b750f4d109d6a0880c750289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kontener przechowujący zebrane czasy odpowiedzi (ms).  <br /></td></tr>
 <tr class="separator:aa8e3a6a2b750f4d109d6a0880c750289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb27e971bfe26f27b5a1133f0fffbd8" id="r_a0fb27e971bfe26f27b5a1133f0fffbd8"><td class="memItemLeft" align="right" valign="top">QNetworkAccessManager *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a0fb27e971bfe26f27b5a1133f0fffbd8">networkManager</a></td></tr>
+<tr class="memdesc:a0fb27e971bfe26f27b5a1133f0fffbd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager odpowiedzialny za komunikację z API modelu językowego.  <br /></td></tr>
 <tr class="separator:a0fb27e971bfe26f27b5a1133f0fffbd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:ac4e8491f8c78abc42cf21b250f3c1254" id="r_ac4e8491f8c78abc42cf21b250f3c1254"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ac4e8491f8c78abc42cf21b250f3c1254">PingapkaTest</a></td></tr>
+<tr class="memdesc:ac4e8491f8c78abc42cf21b250f3c1254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozwala klasie testowej na dostęp do prywatnych pól (wymagane dla poprawnego działania testów jednostkowych).  <br /></td></tr>
 <tr class="separator:ac4e8491f8c78abc42cf21b250f3c1254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Klasa odpowiedzialna za zarządzanie GUI, procesami sieciowymi (ping) oraz integrację z modelem LLM. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&#160;</a></span>MainWindow()</h2>
 
@@ -151,6 +170,14 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Konstruktor klasy <a class="el" href="classMainWindow.html" title="Klasa odpowiedzialna za zarządzanie GUI, procesami sieciowymi (ping) oraz integrację z modelem LLM.">MainWindow</a>. Inicjalizuje UI oraz managera sieci. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Wskaźnik na obiekt nadrzędny (domyślnie nullptr). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -168,6 +195,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destruktor klasy <a class="el" href="classMainWindow.html" title="Klasa odpowiedzialna za zarządzanie GUI, procesami sieciowymi (ping) oraz integrację z modelem LLM.">MainWindow</a>. Zwalnia zasoby zajmowane przez interfejs. </p>
 
 </div>
 </div>
@@ -195,6 +224,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Komunikuje się z lokalnym modelem LLM (np. Gemma) w celu wygenerowania kodu wizualizacji danych. </p>
+<dl class="section return"><dt>Returns</dt><dd>QString Wygenerowany kod Python lub skrypt rezerwowy (fallback). </dd></dl>
+
 </div>
 </div>
 <a id="a867f7e77558b80c29cd9caf4ece43a68" name="a867f7e77558b80c29cd9caf4ece43a68"></a>
@@ -219,6 +251,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Slot odbierający sygnał o zakończeniu pingowania. Odświeża UI i zapisuje wyniki. </p>
 
 </div>
 </div>
@@ -245,6 +279,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Obsługuje kliknięcie przycisku "Gotowe". Inicjuje proces pingowania asynchronicznego. </p>
+
 </div>
 </div>
 <a id="a9f7b5462d643022012e6a513153718b2" name="a9f7b5462d643022012e6a513153718b2"></a>
@@ -270,6 +306,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Obsługuje kliknięcie przycisku "Wykres". Rozpoczyna proces generowania skryptu przez AI. </p>
+
 </div>
 </div>
 <a id="a1c261d056d9925b742ac5ec855cca2cd" name="a1c261d056d9925b742ac5ec855cca2cd"></a>
@@ -294,6 +332,9 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sygnał emitowany po zakończeniu operacji pingowania w osobnym wątku roboczym. </p>
+<p>Umożliwia bezpieczne powiadomienie głównego wątku (UI) o gotowości danych. </p>
 
 </div>
 </div>
@@ -321,6 +362,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Wykonuje operację pingowania. Funkcja przeznaczona do pracy w tle (wątek roboczy). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip</td><td>Adres docelowy do przetestowania. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a61fa0a379fa2e33b3dc8f2f5bd219c77" name="a61fa0a379fa2e33b3dc8f2f5bd219c77"></a>
@@ -347,6 +396,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Zapisuje kod do pliku .py i uruchamia zewnętrzny interpreter Pythona (podejście wieloprocesowe). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">script</td><td>Treść skryptu Python do wykonania. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4cb868f898400955a1035571326591cf" name="a4cb868f898400955a1035571326591cf"></a>
@@ -372,6 +429,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Zapisuje zebrane dane do pliku CSV, który służy jako wejście dla skryptu Python. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
@@ -394,6 +453,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Pozwala klasie testowej na dostęp do prywatnych pól (wymagane dla poprawnego działania testów jednostkowych). </p>
 
 </div>
 </div>
@@ -418,6 +479,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Manager odpowiedzialny za komunikację z API modelu językowego. </p>
+
 </div>
 </div>
 <a id="aa8e3a6a2b750f4d109d6a0880c750289" name="aa8e3a6a2b750f4d109d6a0880c750289"></a>
@@ -440,6 +503,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Kontener przechowujący zebrane czasy odpowiedzi (ms). </p>
+
 </div>
 </div>
 <a id="a35466a70ed47252a0191168126a352a5" name="a35466a70ed47252a0191168126a352a5"></a>
@@ -461,6 +526,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Wskaźnik na komponenty interfejsu użytkownika. </p>
 
 </div>
 </div>
