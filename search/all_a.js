@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7emainwindow_0',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
+  ['na_205_200_0',['🚀 Funkcje (Wymagania na 5.0)',['../index.html#autotoc_md1',1,'']]],
+  ['networkmanager_1',['networkManager',['../classMainWindow.html#a0fb27e971bfe26f27b5a1133f0fffbd8',1,'MainWindow']]]
 ];

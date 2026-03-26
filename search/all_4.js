@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['on_5fbtngotowe_5fclicked_0',['on_btnGotowe_clicked',['../classMainWindow.html#aa26628781d6867fcf21de0373a17f3e9',1,'MainWindow']]],
-  ['on_5fbtnwykres_5fclicked_1',['on_btnWykres_clicked',['../classMainWindow.html#a9f7b5462d643022012e6a513153718b2',1,'MainWindow']]]
+  ['funkcje_20wymagania_20na_205_200_0',['🚀 Funkcje (Wymagania na 5.0)',['../index.html#autotoc_md1',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['networkmanager_0',['networkManager',['../classMainWindow.html#a0fb27e971bfe26f27b5a1133f0fffbd8',1,'MainWindow']]]
+  ['dokumentacja_0',['📖 Dokumentacja',['../index.html#autotoc_md3',1,'']]]
 ];

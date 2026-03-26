@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['runping_0',['runPing',['../classMainWindow.html#a62e6cd40e42b61714679647ff068b561',1,'MainWindow']]],
-  ['runpythonscript_1',['runPythonScript',['../classMainWindow.html#a61fa0a379fa2e33b3dc8f2f5bd219c77',1,'MainWindow']]]
+  ['handlepingresults_0',['handlePingResults',['../classMainWindow.html#a867f7e77558b80c29cd9caf4ece43a68',1,'MainWindow']]]
 ];
