@@ -10,7 +10,7 @@ EXTRACT_STATIC         = YES
 EXTRACT_LOCAL_CLASSES  = YES
 
 INPUT                  = .
-FILE_PATTERNS          = *.cpp *.h *.ui
+FILE_PATTERNS = *.cpp *.h *.ui *.md
 RECURSIVE              = YES
 
 USE_MDFILE_AS_MAINPAGE = README.md
