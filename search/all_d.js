@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['saveresults_0',['saveResults',['../classMainWindow.html#a4cb868f898400955a1035571326591cf',1,'MainWindow']]],
-  ['sieci_20z_20ai_1',['pingapka - Monitor Sieci z AI',['../index.html',1,'']]]
+  ['ui_0',['ui',['../namespaceUi.html',1,'Ui'],['../classMainWindow.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow::ui']]],
+  ['uruchomić_1',['Jak uruchomić?',['../index.html#autotoc_md4',1,'']]]
 ];

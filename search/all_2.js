@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ai_0',['pingapka - Monitor Sieci z AI',['../index.html',1,'']]]
+  ['funkcje_0',['Funkcje',['../index.html#autotoc_md1',1,'']]]
 ];

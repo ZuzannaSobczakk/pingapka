@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ui_0',['ui',['../namespaceUi.html',1,'Ui'],['../classMainWindow.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow::ui']]],
-  ['uruchomić_1',['Jak uruchomić?',['../index.html#autotoc_md4',1,'']]]
+  ['_7emainwindow_0',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
 ];
