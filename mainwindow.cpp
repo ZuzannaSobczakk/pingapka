@@ -134,7 +134,7 @@ QString MainWindow::generatePythonScript()
     csvPath.replace("\\", "/");
 
     QJsonObject json;
-    json["model"] = "gemma3:12b";
+    json["model"] = "gemma3:4b";
     json["system"] = "You are a specialized C++ helper that returns ONLY pure Python code. No markdown, no backticks.";
     json["prompt"] = QString("Write Python code using pandas and matplotlib. "
                              "Read file '%1' with header 'Ping'. "
