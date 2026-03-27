@@ -1,0 +1,30 @@
+WYMAGANIA SYSTEMOWE I ŚRODOWISKOWE DLA PROJEKTU PINGAPKA
+
+1. Środowisko C++ / Qt
+---------------------------------------------------------
+Qt Framework: wersja 6.x lub 5.15
+Wymagane moduły Qt: 
+  - core, gui, widgets 
+  - network 
+
+2. Sztuczna Inteligencja (Ollama)
+---------------------------------------------------------
+Ollama: zainstalowana i uruchomiona (http://127.0.0.1:11434)
+Model AI: gemma3:12b 
+
+3. Środowisko Python (do generowania wykresów)
+---------------------------------------------------------
+Python: wersja 3.8 lub nowsza
+(dodany do zmiennej środowiskowej PATH)
+
+Wymagane biblioteki Python 
+pandas      # Do odczytu pliku ping_results.csv
+matplotlib  # Do generowania i wyświetlania wykresu
+
+4. Inne zależności
+---------------------------------------------------------
+Systemowe narzędzie 'ping': musi być dostępne
+w konsoli systemowej (Windows/Linux).
+Uprawnienia: Program musi mieć uprawnienia do zapisu
+plików w swoim katalogu roboczym (dla plików .csv i .py).
+
