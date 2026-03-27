@@ -20,7 +20,7 @@
 Pełna dokumentacja techniczna projektu dostępna jest pod adresem:
 https://zuzannasobczakk.github.io/pingapka/
 
-## ak uruchomić?
+## Jak uruchomić?
 (wpierw nalezy zapoznac sie z plikiem requirements)
 1. Upewnij się, że masz zainstalowane Qt 6.
 2. Uruchom serwer Ollama z modelem `gemma3:12b`.
