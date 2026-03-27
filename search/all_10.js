@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['z_20ai_0',['pingapka - Monitor Sieci z AI',['../index.html',1,'']]]
+  ['wymagania_20na_205_200_0',['Funkcje (Wymagania na 5.0)',['../index.html#autotoc_md1',1,'']]]
 ];
