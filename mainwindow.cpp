@@ -17,7 +17,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QCoreApplication>
-#include <QtConcurrent/QtConcurrent>// Kluczowe dla wielowątkowości!
+#include <QtConcurrent/QtConcurrent>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,7 +36,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-// --- WIELOWĄTKOWOŚĆ START ---
 
 void MainWindow::on_btnGotowe_clicked()
 {
@@ -48,7 +47,7 @@ void MainWindow::on_btnGotowe_clicked()
 
 
     ui->btnGotowe->setEnabled(false);
-    ui->pingResult->setText("Trwa pingowanie w tle (wielowątkowo)...");
+    ui->pingResult->setText("Trwa pingowanie w tle ...");
 
 
    (void)QtConcurrent::run([this, ip]() {
