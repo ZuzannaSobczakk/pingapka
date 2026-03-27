@@ -10,7 +10,7 @@ Wymagane moduły Qt:
 2. Sztuczna Inteligencja (Ollama)
 ---------------------------------------------------------
 Ollama: zainstalowana i uruchomiona (http://127.0.0.1:11434)
-Model AI: gemma3:12b 
+Model AI: gemma3:4b; 
 
 3. Środowisko Python (do generowania wykresów)
 ---------------------------------------------------------
