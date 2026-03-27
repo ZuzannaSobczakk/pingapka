@@ -2,7 +2,7 @@
 
 **Pingapka** to nowoczesna aplikacja desktopowa stworzona w środowisku Qt 6, służąca do monitorowania opóźnień sieciowych (ping) oraz inteligentnej analizy danych przy użyciu modelu językowego (LLM).
 
-## Funkcje (Wymagania na 5.0)
+## Funkcje 
 - **Wielowątkowość:** Proces pingowania odbywa się w tle przy użyciu `QtConcurrent`, dzięki czemu GUI pozostaje responsywne.
 - **Integracja z AI:** Wykorzystanie modelu Gemma 3 (via Ollama) do generowania dedykowanych skryptów wizualizacji danych w Pythonie.
 - **GUI:** Przejrzysty interfejs zbudowany w oparciu o framework Qt.
